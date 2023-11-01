@@ -54,6 +54,9 @@ function Hangman() {
           image.src = img
           image.id = "hangman"
           document.getElementById('hangman-img').appendChild(image)
+          let answer = document.createElement('h3')
+          answer.innerText = word
+          document.getElementById('hangman-img').appendChild(answer)
         }
         //if remaining attempts === 1 , Alert it's over. GIF IMAGE !!!!
       }
@@ -92,24 +95,27 @@ function Hangman() {
 
   return (
     <>
+    <main>
       <h1>Hangman</h1>
-      <h1>{displayedWord}</h1>
-      <div id="hangman-img">  
-      </div>
-      <form onSubmit={handleSubmit}>
-        <input 
-        type="text"
-        maxLength="1" 
-        value={guess}
-        onChange={handleInput}
-        name="" 
-        id=""/>
-        <button type="submit">Guess</button>
-      </form>
-      <h2> Remaining Attempts: {remainingAttempts}</h2>
-      <h2>Letters Guessed: {guessedLetters}</h2>
-      {/* guess remaining */}
-      {/* Guessed letters */}
+        <h1>{displayedWord}</h1>
+        <div id="hangman-img">  
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input 
+          type="text"
+          maxLength="1" 
+          value={guess}
+          onChange={handleInput}
+          name="" 
+          id=""/>
+          <button type="submit">Guess</button>
+        </form>
+        <h2> Remaining Attempts: {remainingAttempts}</h2>
+        <h2>Letters Guessed: {guessedLetters}</h2>
+        {/* guess remaining */}
+        {/* Guessed letters */}
+    </main>
+      
     </>
   )
 }

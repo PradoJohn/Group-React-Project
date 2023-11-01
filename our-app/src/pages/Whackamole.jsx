@@ -63,6 +63,11 @@ function WhackaMole() {
     }
   };
 
+  //useState for molePosition
+  //set an array of 9 or 12 with modulo
+  //use map to place the molePosition randomly to indexes of  the array
+  //display the mole position in a table
+
   return (
     <>
       <h1>WhackaMole</h1>

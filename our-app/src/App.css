@@ -1,6 +1,7 @@
 body{
   text-align: center;
   background-color: aqua;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 #hangman{
@@ -45,3 +46,16 @@ nav ul li a{
   align-self: center;
   margin-left: 250px ;
 }
+
+#task-list{
+  text-align: start;
+  font-size: 18px;
+}
+.dlt-btn-container {
+  display: flex;
+  margin: 10px;
+}
+.icon {
+  font-size: 20px;
+}
+

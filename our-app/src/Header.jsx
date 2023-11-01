@@ -10,10 +10,10 @@ function Header(){
         <ul>
           <li><a href="/">Hangman</a></li>
           <li><a href="/mute-button">MuteButton</a></li>
-          <li><a href="/whackamole">Whackamole</a></li>
           <li><a href="/pokemon">Pokemon</a></li>
           <li><a href="/to-do-list">ToDoList</a></li>
           <li><a href="/guessing-game">GuessingGame</a></li>
+          <li><a href="/whackamole">Whackamole</a></li>
         </ul>
       </nav>
     </header>
