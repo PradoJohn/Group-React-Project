@@ -11,7 +11,7 @@ function WhackaMole() {
       clearInterval(gameInterval.current);
     }
 
-    setGameStarted(true);
+    setGameStarted(!gameStarted);
 
     gameInterval.current = setInterval(() => {
       const randomBoxIndex = Math.floor(Math.random() * 9);
