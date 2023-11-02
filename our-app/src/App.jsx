@@ -1,33 +1,70 @@
+/****Main Imports***/
 // import App from "../../front-end-app/src/App";
 import './App.css'
-import Hangman from './pages/Hangman.jsx'
-import Whackamole from './pages/Whackamole.jsx'
-import MuteButton from './pages/MuteButton.jsx'
+import Container from 'react-bootstrap/Container';
+
+
+
+/****Navigation Imports***/
 import Header from './Header.jsx'
-import Pokemon from './pages/Pokemon.jsx'
-import ToDoList from './pages/ToDoList.jsx'
-import GuessingGame from './pages/GuessingGame.jsx'
+import Students from './Students.jsx'
+import Assignments from './Assignments.jsx'
+import Home from './Home.jsx'
+
+
+/****Assignment Imports***/
+import Hangman from './assignments/Hangman.jsx'
+import GuessingGame from './assignments/GuessingGame.jsx'
+import Pokemon from './assignments/Pokemon.jsx'
+// import ToDoList from './pages/ToDoList.jsx'
+// import MuteButton from './pages/MuteButton.jsx'
+// import Whackamole from './pages/Whackamole.jsx'
+
+/****Profile Imports***/
+import Jprofile from './students/john/Jprofile.jsx'
+import Bprofile from './students/bryan/Bprofile.jsx'
+import Cprofile from './students/chad/Cprofile.jsx'
+
+
 
 function App(){
   let Content
   switch (window.location.pathname) {
-    case '/':
+    case '/hangman':
       Content = Hangman
       break;
-    case '/whackamole':
-      Content = Whackamole
-      break;
-    case '/mute-button':
-      Content = MuteButton
-      break;
+    // case '/whackamole':
+    //   Content = Whackamole
+    //   break;
+    // case '/mute-button':
+    //   Content = MuteButton
+    //   break;
     case '/pokemon':
       Content = Pokemon
       break;
-    case '/to-do-list':
-      Content = ToDoList
-      break;
+    // case '/to-do-list':
+    //   Content = ToDoList
+    //   break;
     case '/guessing-game':
       Content = GuessingGame
+      break;
+    case '/':
+      Content = Home
+      break;
+    case '/students':
+      Content = Students
+      break;
+    case '/assignments':
+      Content = Assignments
+      break;
+    case '/john':
+      Content = Jprofile
+      break;
+    case '/bryan':
+      Content = Bprofile
+      break;
+    case '/chad':
+      Content = Cprofile
       break;
     default:
       break;
@@ -36,10 +73,12 @@ function App(){
 
   return (
     <>
-    <Header/>
-    <div id="app-container">
-    <Content/>
-    </div>
+    
+    
+    <Container>
+      <Header/>
+      <Content/>
+    </Container>
     </>
   );
 }
