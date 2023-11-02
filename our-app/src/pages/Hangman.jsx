@@ -26,7 +26,6 @@ function Hangman() {
       }
     }
     randomWord()
-    console.log(word)
   }, [])
 
 
