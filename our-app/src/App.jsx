@@ -37,7 +37,9 @@ function App(){
   return (
     <>
     <Header/>
+    <div id="app-container">
     <Content/>
+    </div>
     </>
   );
 }

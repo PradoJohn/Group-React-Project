@@ -59,3 +59,12 @@ nav ul li a{
   font-size: 20px;
 }
 
+#app-container {
+ 
+  margin-top: 20px;
+  padding: 20px;
+  display: flexbox;
+  border: 1px solid black;
+  box-shadow: 10px 10px 5px #440303;
+  background-color: white;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import renderTable from './bryan_pages/components/Table.jsx';
 
 function WhackaMole() {
   const [selectedBox, setSelectedBox] = useState(null);
@@ -10,16 +11,18 @@ function WhackaMole() {
     if (gameInterval.current) {
       clearInterval(gameInterval.current);
     }
+    setGameStarted(!gameStarted)
 
-    setGameStarted(!gameStarted);
 
     gameInterval.current = setInterval(() => {
       const randomBoxIndex = Math.floor(Math.random() * 9);
       setSelectedBox(randomBoxIndex);
-    }, 1000);
+    }, 300);
+  
 
     setTimeout(() => {
       clearInterval(gameInterval.current);
+      setGameStarted(false);
     }, 30000);
   };
 
@@ -29,50 +32,17 @@ function WhackaMole() {
     }
   };
 
-  const renderTable = () => {
-    if (gameStarted) {
-      const tableRows = [];
-      for (let row = 0; row < 3; row++) {
-        const cells = [];
-        for (let col = 0; col < 3; col++) {
-          const boxIndex = row * 3 + col;
-          const isBoxSelected = boxIndex === selectedBox;
-
-          cells.push(
-            <td
-              key={col}
-              onClick={() => handleBoxClick(boxIndex)}
-              className={isBoxSelected ? 'selected-box' : ''}
-            >
-              {isBoxSelected ? 'Click me!' : ''}
-            </td>
-          );
-        }
-        tableRows.push(<tr key={row}>{cells}</tr>);
-      }
-
-      return (
-        <table>
-          <tbody>{tableRows}</tbody>
-        </table>
-      );
-    } else {
-      return (
-        <button onClick={startGame}>Start</button>
-      );
-    }
-  };
-
-  //useState for molePosition
-  //set an array of 9 or 12 with modulo
-  //use map to place the molePosition randomly to indexes of  the array
-  //display the mole position in a table
+  
 
   return (
     <>
       <h1>WhackaMole</h1>
-      {renderTable()}
+      {renderTable(gameStarted, selectedBox, handleBoxClick)}
+      {gameStarted ? (
       <p>Points: {points}</p>
+      ) : (
+        <button onClick={startGame}>Start</button>
+      )}
     </>
   );
 }
