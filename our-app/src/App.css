@@ -1,10 +1,8 @@
-/* body{
-  text-align: center;
-  background-color: aqua;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+.body{
+  background-color: gainsboro;
 }
 
-#hangman{
+/* #hangman{
   width: 80%;
   border: 1px solid black;
   box-shadow: 10px 10px 5px #440303;

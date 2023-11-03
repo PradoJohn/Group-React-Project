@@ -1,17 +1,28 @@
 
+import './Jprofile.css'
+/*****Bootstrap imports*****/
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-
-
-
+/*****Linked Files imports*****/
+import LinkedinNavbar from './LinkedinNavbar.jsx'
+import LinkedinBody from './LinkedinBody.jsx'
 
 function Jprofile(){
 
   return (
     <>
-      <h1>John Profile</h1>
-      <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nihil esse quibusdam accusantium exercitationem quisquam pariatur doloribus architecto officia voluptatum molestias quae autem soluta iusto corrupti odio, laudantium quia aspernatur?</p>
-      </div>
+      <Container fluid>
+          <Row>
+              <LinkedinNavbar/>
+          </Row>
+          <Row>
+            <LinkedinBody/>
+          </Row>
+      </Container>
+         
+        
     </>
   );
 }

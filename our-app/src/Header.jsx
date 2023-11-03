@@ -13,9 +13,9 @@ import Col from 'react-bootstrap/Col';
 function Header() {
   return (
     <Row>
-      <Navbar bg="dark" data-bs-theme="dark" id='custom-shadow' className='mb-4'>
+      <Navbar bg="dark" data-bs-theme="dark" id='custom-shadow' className='mb-3'>
           <Container>
-            <Navbar.Brand href="/"><i className='fa fa-codepen me-3 px-3'></i></Navbar.Brand>
+            <Navbar.Brand href="/"><i className='fa fa-codepen me-3 px-3' style={{fontSize:25}}></i></Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/students">STUDENTS</Nav.Link>
               <Nav.Link href="/assignments">ASSIGNMENTS</Nav.Link>

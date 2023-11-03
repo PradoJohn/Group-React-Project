@@ -73,9 +73,7 @@ function App(){
 
   return (
     <>
-    
-    
-    <Container>
+    <Container className='body'>
       <Header/>
       <Content/>
     </Container>

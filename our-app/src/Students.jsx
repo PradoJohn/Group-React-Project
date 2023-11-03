@@ -31,10 +31,9 @@ function Students(){
   return (
     <>
     <h1 className='flex justify-center mb-5'>Student Page</h1>
-    <Row>
         {studentData.map((student, index) => (
-        <Col lg={3} md={6} sm={6} xs={6} key={index}>
-          <Card style={{ width: '18rem' }} className='shadow'>
+        <Col lg={3} key={index} className='d-flex justify-center'>
+          <Card style={{ width: '18rem' }} className='shadow mb-3'>
             <Card.Img variant="top" src={userImage} />
             <Card.Body>
               <Card.Title>{student.name}</Card.Title>
@@ -84,7 +83,6 @@ function Students(){
           </Card.Body>
           </Card>
         </Col> */}
-    </Row>
     </>
   );
 }

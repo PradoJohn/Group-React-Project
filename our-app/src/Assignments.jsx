@@ -12,7 +12,7 @@ function Assignments(){
   const assignmentData = [
     {
       title: 'Hangman',
-      description: 'Hangman is a word-guessing game in which one player thinks of a word and the other player tries to guess it by suggesting letters while limited to a certain number of incorrect guesses.',
+      description: 'Word-guessing game by suggesting letters while limited with incorrect guesses.',
       playLink: '/hangman',
       collaborators: ['Bryan', 'Chad', 'John'],
     },
@@ -28,6 +28,12 @@ function Assignments(){
       playLink: '/guessing-game',
       collaborators: ['John', 'Kate'],
     },
+    {
+      title: 'Guess A Number',
+      description: 'Guess a Number between 100.',
+      playLink: '/guessing-game',
+      collaborators: ['John', 'Kate'],
+    },
   ];
 
   return (
@@ -36,7 +42,7 @@ function Assignments(){
     <Row>
       {assignmentData.map((assignment, index) => (
         <Col lg ={3} key={index}>
-            <Card  className="text-center">
+            <Card  className="mb-4 text-center">
               <Card.Header>Featured</Card.Header>
               <Card.Body>
                 <Card.Title>{assignment.title}</Card.Title>
@@ -51,7 +57,7 @@ function Assignments(){
                 </div>
                 <div>
                   {assignment.collaborators.map((collaborator, i) => (
-                    <Button key={i} variant="secondary me-1 mt-2" href={`/${collaborator}`}>
+                    <Button key={i} variant="secondary me-1 mt-2" href={`/${collaborator.toLowerCase()}`}>
                       {collaborator}
                     </Button>
                   ))}
