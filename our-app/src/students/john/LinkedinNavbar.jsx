@@ -1,35 +1,71 @@
 
 
+import { useState } from 'react';
 /*****Navbar imports*****/
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
-import './LinkedinNavbar.css'
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 /*******Icon imports *******/
-import {FaLinkedin, FaSearch, FaHome} from 'react-icons/fa';
+import {FaSearch, FaHome} from 'react-icons/fa';
 import {FaPeopleGroup, FaBagShopping, FaBell} from 'react-icons/fa6'
 import {AiFillMessage} from 'react-icons/ai'
+
 
 function LinkedinNavbar(){
 
   return (
     <>
-      <Navbar bg="light" data-bs-theme="light" className='shadow mb-1 d-flex justify-content-between'>
-          <Container>
-            <Navbar.Brand href="/" className='me-4'><FaLinkedin color='blue' size={35} /></Navbar.Brand>
+        {/* <Navbar>
             <Nav className='me-3'>
-              <Nav.Link href="#"><FaSearch size={24}/></Nav.Link>
+              <Nav.Link href="#"><FaSearch className='custom-icon' size={24}/></Nav.Link>
             </Nav>
             <Nav className="me-auto">
-              <Nav.Link className="custom-nav" href="#"><FaHome size={25}/></Nav.Link>
-              <Nav.Link className="custom-nav" href="#"><FaPeopleGroup size={25}/></Nav.Link>
-              <Nav.Link className="custom-nav" href="#"><FaBagShopping size={25}/></Nav.Link>
-              <Nav.Link className="custom-nav" href="#"><AiFillMessage size={25}/></Nav.Link>
-              <Nav.Link className="custom-nav" href="#"><FaBell size={25}/></Nav.Link>
+              <Nav.Link href="#"><FaHome className='custom-icon'size={25}/></Nav.Link>
+              <Nav.Link href="#"><FaPeopleGroup className='custom-icon' size={25}/></Nav.Link>
+              <Nav.Link href="#"><FaBagShopping className='custom-icon' size={25}/></Nav.Link>
+              <Nav.Link href="#"><AiFillMessage className='custom-icon' size={25}/></Nav.Link>
+              <Nav.Link href="#"><FaBell className='custom-icon' size={25}/></Nav.Link>
             </Nav>
-          </Container>
-      </Navbar>
+        </Navbar> */}
+        <Navbar expand="lg" className="bg-transparent mb-4">
+        <Container fluid>
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="bg-transparent"><FaSearch className='custom-icon' size={24}/></Button>
+            </Form>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: '100px' }}
+              navbarScroll
+            >
+              <Nav.Link href="#action1"><FaPeopleGroup className='custom-icon' size={25}/></Nav.Link>
+              <Nav.Link href="#action2"><FaBagShopping className='custom-icon' size={25}/></Nav.Link>
+              <NavDropdown title="Link" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">
+                  Something else here
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>  
     </>
 
   );

@@ -3,26 +3,31 @@
 import './Header.css'
 
 /******* Bootstrap imports *********/
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {
+  Container,
+  Nav,
+  Navbar,
+  Row,
+  Col,
+} from 'react-bootstrap';
+
+/*********React Icon import*************/
+import {FaCodepen} from 'react-icons/fa';
+
 
 function Header() {
   return (
-    <Row>
-      <Navbar bg="dark" data-bs-theme="dark" id='custom-shadow' className='mb-3'>
-          <Container>
-            <Navbar.Brand href="/"><i className='fa fa-codepen me-3 px-3' style={{fontSize:25}}></i></Navbar.Brand>
+    <>
+      <Navbar bg="dark" data-bs-theme="dark" id='custom-shadow'>
+          <Container fluid>
+            <Navbar.Brand href="/"><FaCodepen size={40} className='me-5 ml-5'/></Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/students">STUDENTS</Nav.Link>
               <Nav.Link href="/assignments">ASSIGNMENTS</Nav.Link>
             </Nav>
           </Container>
       </Navbar>
-    </Row>
+    </>
   );
 }
 

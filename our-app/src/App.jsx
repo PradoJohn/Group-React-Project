@@ -1,9 +1,12 @@
+
 /****Main Imports***/
 // import App from "../../front-end-app/src/App";
 import './App.css'
-import Container from 'react-bootstrap/Container';
-
-
+import {
+  Container,
+  Row,
+  Col
+} from 'react-bootstrap';
 
 /****Navigation Imports***/
 import Header from './Header.jsx'
@@ -26,9 +29,9 @@ import Bprofile from './students/bryan/Bprofile.jsx'
 import Cprofile from './students/chad/Cprofile.jsx'
 
 
-
 function App(){
   let Content
+  console.log(window.location)
   switch (window.location.pathname) {
     case '/hangman':
       Content = Hangman
@@ -73,9 +76,14 @@ function App(){
 
   return (
     <>
-    <Container className='body'>
-      <Header/>
-      <Content/>
+    <Container fluid>
+      {/* Row for Navigation Component */}
+      <Row>
+          <Header/>
+      </Row>
+      <Row>
+        <Content/>
+      </Row>
     </Container>
     </>
   );
